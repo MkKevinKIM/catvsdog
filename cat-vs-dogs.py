@@ -149,7 +149,7 @@ korobka = Sequential([
 learning_rate = "0.002"
 
 #learning rate changed here
-korobka.compile(optimizer=keras.optimizer.Adam(learning_rate),
+korobka.compile(optimizer='adam',
                   loss='categorical_crossentropy',
                   metrics=['accuracy'])
 
