@@ -130,16 +130,13 @@ n_class = 2
 korobka = Sequential([
     data_augmentation,
     layers.Conv2D(32, (3, 3), activation='relu'),
-    layers.Conv2D(32, (3, 3), activation='relu'),
+
     layers.MaxPooling2D(2, 2),
-    layers.Conv2D(64, (3, 3), activation='relu'),
-    layers.Conv2D(64, (3, 3), activation='relu'),
-    layers.MaxPooling2D(2, 2),
-    layers.Conv2D(128, (3, 3), activation='relu'),
-    layers.Conv2D(128, (3, 3), activation='relu'),
-    layers.MaxPooling2D(2, 2),
+    layers.Conv2D(64, (3, 3), activation='elu'),
+
+
     layers.Flatten(),
-    layers.Dense(512, activation='relu'),
+
     layers.Dropout(0.5),
     layers.Dense(2, activation = 'softmax')
 ])
@@ -149,7 +146,7 @@ korobka = Sequential([
 learning_rate = "0.002"
 
 #learning rate changed here
-korobka.compile(optimizer='adam',
+korobka.compile(optimizer='sgd',
                   loss='categorical_crossentropy',
                   metrics=['accuracy'])
 
