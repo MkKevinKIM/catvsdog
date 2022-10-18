@@ -151,6 +151,7 @@ korobka.compile(optimizer='sgd',
                   metrics=['accuracy'])
 
 
+#stop le training en avance si le val_loss diverge trop.
 early_stopping = EarlyStopping(
     monitor = "val_loss",
     patience = 3,
@@ -173,7 +174,7 @@ val_acc = history.history['val_accuracy']
 loss = history.history['loss']
 val_loss = history.history['val_loss']
 
-epochs_range = range(28)
+epochs_range = range(30)
 
 plt.figure(figsize=(8, 8))
 plt.subplot(1, 2, 1)
