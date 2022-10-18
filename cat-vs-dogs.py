@@ -151,7 +151,7 @@ korobka.compile(optimizer='sgd',
                   metrics=['accuracy'])
 
 
-#stop le training en avance si le val_loss diverge trop.
+#callback : stop training early if needed.
 early_stopping = EarlyStopping(
     monitor = "val_loss",
     patience = 3,
